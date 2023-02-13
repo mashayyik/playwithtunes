@@ -13,7 +13,6 @@ var editID = -1;
 let SelectedRecord = 0
 
 let selectedTempo = 1
-
 let id = 0
 
 const tempoButtons = document.querySelectorAll('input[name="tempo"]');
@@ -169,7 +168,6 @@ function playlist(id) {
     }, 2 * tempo * track.length - 1);
 }
 
-
 function editList(id) {
     SelectedRecord = id
     recordingToggle.style.display = "none";
@@ -236,11 +234,11 @@ function update() {
     textrecording.style.display = "block"
     btnUpdate.style.display = "none"
     soundTrackName.style.display = "none"
-
 }
 
 function deleteList() {
     textrecording.innerHTML = "DELETE IN PROGRESS!"
+    console.log(this, this.parentNode)
     setTimeout(() => {
         this.parentNode.remove()
         textrecording.innerHTML = 'Your Data Has Been Deleted.'
